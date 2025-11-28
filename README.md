@@ -44,12 +44,45 @@ Write the detailed procedure here
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+### Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+## Developed by:VIJIYALAKSHMI A
+## RegisterNumber:25017569
 
+```
+// Full Adder in Verilog
+module full_adder (
+    input  wire a, b, cin,   // Inputs
+    output wire sum, carry   // Outputs
+);
+
+    // Logic equations
+    assign sum   = a ^ b ^ cin;                  // XOR for sum
+    assign carry = (a & b) | (b & cin) | (a & cin); // Majority function for carry
+
+endmodule
+```
+```
+// Full Subtractor in Verilog
+module full_subtractor (
+    input  wire a, b, bin,       // Inputs
+    output wire diff, borrow     // Outputs
+);
+
+    // Logic equations
+    assign diff   = a ^ b ^ bin;                  // Difference
+    assign borrow = (~a & b) | (~(a ^ b) & bin);  // Borrow logic
+
+endmodule
+```
 **RTL Schematic**
 
+<img width="1102" height="604" alt="Screenshot 2025-11-28 201700" src="https://github.com/user-attachments/assets/0faac9e5-d42d-4ac1-8024-71d478ace9c4" />
+<img width="1544" height="626" alt="Screenshot 2025-11-27 222851" src="https://github.com/user-attachments/assets/e8667042-1a29-4713-9415-737f7d2a215a" />
+
 **Output Timing Waveform**
+
+<img width="1085" height="251" alt="Screenshot 2025-11-28 201752" src="https://github.com/user-attachments/assets/c4e4d8d6-12b7-482b-b7b0-d8f7a71eca20" />
+<img width="1084" height="220" alt="Screenshot 2025-11-28 201817" src="https://github.com/user-attachments/assets/7db122e9-d342-4334-b54d-be29daaf278a" />
 
 **Result:**
 
